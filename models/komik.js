@@ -1,15 +1,15 @@
-module.export = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
     const Komik = sequelize.define('Komik', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true 
+            autoIncrement: true
         },
         judul: {
             type: DataTypes.STRING,
             allowNull: false
         },
-            penulis: {
+        penulis: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -17,11 +17,11 @@ module.export = (sequelize, DataTypes) => {
             type: DataTypes.TEXT,
             allowNull: false
         }
-    },{
+    }, {
         tableName: 'komik',
-        timestamps: false, 
+        timestamps: true,
         freezeTableName: true
-    
+
     });
     return Komik;
 }
